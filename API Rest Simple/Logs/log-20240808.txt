@@ -1,0 +1,106 @@
+2024-08-08 02:51:53.428 -03:00 [INF] Starting web host
+2024-08-08 02:51:55.238 -03:00 [INF] Now listening on: https://localhost:7149
+2024-08-08 02:51:55.243 -03:00 [INF] Now listening on: http://localhost:5017
+2024-08-08 02:51:55.246 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-08 02:51:55.255 -03:00 [INF] Hosting environment: Development
+2024-08-08 02:51:55.255 -03:00 [INF] Content root path: D:\Portfolio\API REST 2\API Rest Simple\API Rest Simple
+2024-08-08 02:51:56.679 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-08-08 02:51:56.915 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html;charset=utf-8 241.7886ms
+2024-08-08 02:51:57.289 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-08 02:51:57.289 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_vs/browserLink - null null
+2024-08-08 02:51:57.301 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 12.1257ms
+2024-08-08 02:51:57.343 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.0621ms
+2024-08-08 02:51:57.387 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-08-08 02:51:57.555 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 168.0163ms
+2024-08-08 02:53:06.082 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/api/People - null null
+2024-08-08 02:53:06.110 -03:00 [INF] Executing endpoint 'API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple)'
+2024-08-08 02:53:06.136 -03:00 [INF] Route matched with {action = "Getpersons", controller = "People"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[API_Rest_Simple.Models.Person]]] Getpersons() on controller API_Rest_Simple.Controllers.PeopleController (API Rest Simple).
+2024-08-08 02:53:09.422 -03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[id], [p].[age], [p].[name]
+FROM [persons] AS [p]
+2024-08-08 02:53:09.506 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API_Rest_Simple.Models.Person, API Rest Simple, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-08 02:53:09.518 -03:00 [INF] Executed action API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple) in 3376.5137ms
+2024-08-08 02:53:09.520 -03:00 [INF] Executed endpoint 'API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple)'
+2024-08-08 02:53:09.619 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Stream does not support writing.
+   at System.IO.Stream.ValidateCopyToArguments(Stream destination, Int32 bufferSize)
+   at System.IO.MemoryStream.CopyToAsync(Stream destination, Int32 bufferSize, CancellationToken cancellationToken)
+   at System.IO.Stream.CopyToAsync(Stream destination)
+   at API_Rest_Simple.Middleware.ResponseInspectionMiddleware.InvokeAsync(HttpContext context) in D:\Portfolio\API REST 2\API Rest Simple\API Rest Simple\Middleware\ResponseInspectionMiddleware.cs:line 30
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-08 02:53:09.660 -03:00 [ERR] An exception was thrown attempting to display the error page.
+System.NotSupportedException: Specified method is not supported.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(Boolean writeToStream, ReadOnlyMemory`1 data, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.GetTaskForValueTaskSource(IValueTaskSource`1 t)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.DisplayExceptionContent(ErrorContext errorContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-08 02:53:09.668 -03:00 [ERR] Connection id "0HN5NDOQOO2CJ", Request id "0HN5NDOQOO2CJ:00000001": An unhandled exception was thrown by the application.
+System.NotSupportedException: Stream does not support writing.
+   at System.IO.Stream.ValidateCopyToArguments(Stream destination, Int32 bufferSize)
+   at System.IO.MemoryStream.CopyToAsync(Stream destination, Int32 bufferSize, CancellationToken cancellationToken)
+   at System.IO.Stream.CopyToAsync(Stream destination)
+   at API_Rest_Simple.Middleware.ResponseInspectionMiddleware.InvokeAsync(HttpContext context) in D:\Portfolio\API REST 2\API Rest Simple\API Rest Simple\Middleware\ResponseInspectionMiddleware.cs:line 30
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-08-08 02:53:09.688 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/api/People - 500 0 null 3606.6913ms
+2024-08-08 02:56:35.921 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-08-08 02:56:35.945 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html;charset=utf-8 24.3559ms
+2024-08-08 02:56:35.951 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_vs/browserLink - null null
+2024-08-08 02:56:35.951 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-08 02:56:35.957 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 6.8423ms
+2024-08-08 02:56:35.976 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.2444ms
+2024-08-08 02:56:36.055 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-08-08 02:56:36.071 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.8781ms
+2024-08-08 02:58:04.962 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-08-08 02:58:04.982 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html;charset=utf-8 18.6357ms
+2024-08-08 02:58:04.987 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-08 02:58:04.987 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_vs/browserLink - null null
+2024-08-08 02:58:04.990 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 3.5986ms
+2024-08-08 02:58:05.004 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.9895ms
+2024-08-08 02:58:05.069 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-08-08 02:58:05.079 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.9619ms
+2024-08-08 03:00:02.467 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/api/People - null null
+2024-08-08 03:00:02.479 -03:00 [INF] Executing endpoint 'API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple)'
+2024-08-08 03:00:02.486 -03:00 [INF] Route matched with {action = "Getpersons", controller = "People"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[API_Rest_Simple.Models.Person]]] Getpersons() on controller API_Rest_Simple.Controllers.PeopleController (API Rest Simple).
+2024-08-08 03:00:02.520 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[id], [p].[age], [p].[name]
+FROM [persons] AS [p]
+2024-08-08 03:00:02.523 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API_Rest_Simple.Models.Person, API Rest Simple, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-08 03:00:02.525 -03:00 [INF] Executed action API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple) in 33.4715ms
+2024-08-08 03:00:02.527 -03:00 [INF] Executed endpoint 'API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple)'
+2024-08-08 03:00:02.528 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/api/People - 200 null application/json; charset=utf-8 64.7101ms
+2024-08-08 03:00:03.923 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/api/People - null null
+2024-08-08 03:00:03.928 -03:00 [INF] Executing endpoint 'API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple)'
+2024-08-08 03:00:03.930 -03:00 [INF] Route matched with {action = "Getpersons", controller = "People"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[API_Rest_Simple.Models.Person]]] Getpersons() on controller API_Rest_Simple.Controllers.PeopleController (API Rest Simple).
+2024-08-08 03:00:03.989 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[id], [p].[age], [p].[name]
+FROM [persons] AS [p]
+2024-08-08 03:00:03.994 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API_Rest_Simple.Models.Person, API Rest Simple, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-08 03:00:03.996 -03:00 [INF] Executed action API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple) in 64.3161ms
+2024-08-08 03:00:03.998 -03:00 [INF] Executed endpoint 'API_Rest_Simple.Controllers.PeopleController.Getpersons (API Rest Simple)'
+2024-08-08 03:00:03.998 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/api/People - 200 null application/json; charset=utf-8 75.1617ms
+2024-08-08 03:04:15.272 -03:00 [INF] Starting web host
+2024-08-08 03:04:16.073 -03:00 [INF] Now listening on: https://localhost:7149
+2024-08-08 03:04:16.074 -03:00 [INF] Now listening on: http://localhost:5017
+2024-08-08 03:04:16.076 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-08 03:04:16.076 -03:00 [INF] Hosting environment: Development
+2024-08-08 03:04:16.076 -03:00 [INF] Content root path: D:\Portfolio\API REST 2\API Rest Simple\API Rest Simple
+2024-08-08 03:04:17.966 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/index.html - null null
+2024-08-08 03:04:18.166 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/index.html - 200 null text/html;charset=utf-8 203.4374ms
+2024-08-08 03:04:18.690 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_vs/browserLink - null null
+2024-08-08 03:04:18.690 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-08 03:04:18.695 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 4.9168ms
+2024-08-08 03:04:18.722 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.3866ms
+2024-08-08 03:04:18.883 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - null null
+2024-08-08 03:04:18.992 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7149/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 108.8785ms
+2024-08-08 03:05:15.884 -03:00 [INF] Starting web host
